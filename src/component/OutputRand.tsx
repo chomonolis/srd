@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Box } from '@mui/material';
 
 import XORShift from '../class/XORShift';
 import SeedInput from './SeedInput';
@@ -24,10 +25,19 @@ const OutputRand = () => {
 
   return (
     <>
-      <XorsInfo xors={xors} />
-      <SeedInput setXors={setXors} />
-      <SetSeedRandom setXors={setXors} />
-      <SetMod callbackFunc={modRandCallback} />
+      <Box sx={{ m: 1 }}>
+        <XorsInfo xors={xors} />
+      </Box>
+      <Box sx={{ m: 1 }}>
+        <SeedInput setXors={setXors} />
+      </Box>
+      <Box sx={{ m: 1 }}>
+        <SetSeedRandom setXors={setXors} />
+      </Box>
+      <Box sx={{ m: 1 }}>
+        <SetMod callbackFunc={modRandCallback} />
+      </Box>
+
       {results.map((result, idx) => {
         return <OutputResult key={idx} result={result} />;
       })}
