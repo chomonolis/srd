@@ -18,7 +18,6 @@ const OutputRand = () => {
       mod: mod,
       res: res,
     };
-    console.log(r);
     setResults([r, ...results]);
   };
 
