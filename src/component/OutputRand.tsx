@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import XORShift from '../class/XORShift';
 import SeedInput from './SeedInput';
-import OutputModRand from './OutputModRand';
+import OutputModRand from './setMod';
 
 const OutputRand = () => {
   const [xors, setXors] = useState<XORShift>(new XORShift(10));
