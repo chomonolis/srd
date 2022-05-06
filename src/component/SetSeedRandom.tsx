@@ -29,8 +29,8 @@ const SetSeedRandom = (props: Props) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField type='number' {...registerMui(register('max', { required: true }))} />
         <TextField type='number' {...registerMui(register('min', { required: true }))} />
+        <TextField type='number' {...registerMui(register('max', { required: true }))} />
         <Button variant='contained' type='submit' color='primary'>
           ランダムシード値
         </Button>
