@@ -8,7 +8,7 @@ import OutputResult, { Result } from './OutputResult';
 
 const OutputRand = () => {
   const [xors, setXors] = useState<XORShift>(new XORShift(10));
-  const [result, setResult] = useState<Result>();
+  const [results, setResults] = useState<Result[]>([]);
 
   const modRandCallback = (mod: number) => {
     const res = xors.modNext(mod);
@@ -18,7 +18,8 @@ const OutputRand = () => {
       mod: mod,
       res: res,
     };
-    setResult(r);
+    console.log(r);
+    setResults([r, ...results]);
   };
 
   return (
@@ -26,7 +27,9 @@ const OutputRand = () => {
       <XorsInfo xors={xors} />
       <SeedInput setXors={setXors} />
       <SetMod callbackFunc={modRandCallback} />
-      {result && <OutputResult result={result} />}
+      {results.map((result, idx) => {
+        return <OutputResult key={idx} result={result} />;
+      })}
     </>
   );
 };
