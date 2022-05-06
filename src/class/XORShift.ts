@@ -17,6 +17,9 @@ class XORShift {
   }
 
   modNext(mod: number) {
+    if (mod === 0) {
+      return 0;
+    }
     return this.next() % mod;
   }
 }
