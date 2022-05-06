@@ -3,6 +3,7 @@ import { useState } from 'react';
 import XORShift from '../class/XORShift';
 import SeedInput from './SeedInput';
 import OutputModRand from './setMod';
+import XorsInfo from './XorsInfo';
 
 const OutputRand = () => {
   const [xors, setXors] = useState<XORShift>(new XORShift(10));
@@ -17,6 +18,7 @@ const OutputRand = () => {
 
   return (
     <>
+      <XorsInfo xors={xors} />
       <button onClick={onClick}>next</button>
       {printNumber}
       <SeedInput setXors={setXors} />
