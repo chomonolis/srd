@@ -16,7 +16,6 @@ const SetMod = (props: Props) => {
   const { callbackFunc } = props;
   const { register, handleSubmit } = useForm<ModInputType>();
   const onSubmit: SubmitHandler<ModInputType> = (data) => {
-    console.log(data.mod);
     callbackFunc(data.mod);
   };
 
