@@ -5,6 +5,7 @@ import SeedInput from './SeedInput';
 import SetMod from './SetMod';
 import XorsInfo from './XorsInfo';
 import OutputResult, { Result } from './OutputResult';
+import SetSeedRandom from './SetSeedRandom';
 
 const OutputRand = () => {
   const [xors, setXors] = useState<XORShift>(new XORShift(10));
@@ -25,6 +26,7 @@ const OutputRand = () => {
     <>
       <XorsInfo xors={xors} />
       <SeedInput setXors={setXors} />
+      <SetSeedRandom setXors={setXors} />
       <SetMod callbackFunc={modRandCallback} />
       {results.map((result, idx) => {
         return <OutputResult key={idx} result={result} />;
