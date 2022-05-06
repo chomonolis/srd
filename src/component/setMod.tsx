@@ -12,11 +12,10 @@ type ModInputType = {
   mod: number;
 };
 
-const OutputModRand = (props: Props) => {
+const SetMod = (props: Props) => {
   const { callbackFunc } = props;
   const { register, handleSubmit } = useForm<ModInputType>();
   const onSubmit: SubmitHandler<ModInputType> = (data) => {
-    console.log(data.mod);
     callbackFunc(data.mod);
   };
 
@@ -32,4 +31,4 @@ const OutputModRand = (props: Props) => {
   );
 };
 
-export default OutputModRand;
+export default SetMod;
