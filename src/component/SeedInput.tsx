@@ -23,8 +23,16 @@ const SeedInput = (props: Props) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField type='number' {...registerMui(register('seed', { required: true }))} />
-        <Button variant='contained' type='submit' color='primary'>
+        <TextField
+          sx={{ m: 1 }}
+          type='number'
+          label='シード値'
+          InputLabelProps={{
+            shrink: true,
+          }}
+          {...registerMui(register('seed', { required: true }))}
+        />
+        <Button sx={{ m: 1 }} variant='contained' type='submit' color='primary'>
           シード値変更
         </Button>
       </form>

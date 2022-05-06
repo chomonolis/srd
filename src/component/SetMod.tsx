@@ -22,8 +22,16 @@ const SetMod = (props: Props) => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField type='number' {...registerMui(register('mod', { required: true }))} />
-        <Button variant='contained' type='submit' color='primary'>
+        <TextField
+          sx={{ m: 1 }}
+          type='number'
+          label='Mod'
+          InputLabelProps={{
+            shrink: true,
+          }}
+          {...registerMui(register('mod', { required: true }))}
+        />
+        <Button sx={{ m: 1 }} variant='contained' type='submit' color='primary'>
           mod付き乱数作成
         </Button>
       </form>
