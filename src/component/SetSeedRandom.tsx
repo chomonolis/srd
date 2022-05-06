@@ -6,8 +6,8 @@ import registerMui from '../utils/registerMui';
 import XORShift from '../class/XORShift';
 
 type RangeInputType = {
-  min: number;
-  max: number;
+  min: string;
+  max: string;
 };
 
 type Props = {
@@ -19,10 +19,10 @@ const SetSeedRandom = (props: Props) => {
   const { register, handleSubmit } = useForm<RangeInputType>();
 
   const onSubmit: SubmitHandler<RangeInputType> = (data) => {
-    const p = data.max - data.min;
+    const p = Number(data.max) - Number(data.min);
     if (p > 0) {
       const q = Math.floor(Math.random() * p);
-      setXors(new XORShift(q + data.min));
+      setXors(new XORShift(q + Number(data.min)));
     }
   };
 
