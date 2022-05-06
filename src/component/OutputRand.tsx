@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import XORShift from '../class/XORShift';
 import SeedInput from './SeedInput';
-import OutputModRand from './SetMod';
+import SetMod from './SetMod';
 import XorsInfo from './XorsInfo';
 import OutputResult, { Result } from './OutputResult';
 
@@ -25,7 +25,7 @@ const OutputRand = () => {
     <>
       <XorsInfo xors={xors} />
       <SeedInput setXors={setXors} />
-      <OutputModRand callbackFunc={modRandCallback} />
+      <SetMod callbackFunc={modRandCallback} />
       {result && <OutputResult result={result} />}
     </>
   );
