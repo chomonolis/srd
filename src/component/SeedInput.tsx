@@ -17,7 +17,6 @@ const SeedInput = (props: Props) => {
   const { setXors } = props;
   const { register, handleSubmit } = useForm<SeedInputType>();
   const onSubmit: SubmitHandler<SeedInputType> = (data) => {
-    console.log(data.seed);
     setXors(new XORShift(data.seed));
   };
 
